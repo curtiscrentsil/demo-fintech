@@ -7,6 +7,9 @@ import { svg } from "../config/Svg";
 import SettingsScreen from "../screens/SettingsScreen";
 import P from "../components/P";
 import ReferralScreen from "../screens/ReferralScreen";
+import HomeScreen from "../screens/HomeScreen";
+import WalletScreen from "../screens/WalletScreen";
+import TransactionScreen from "../screens/TransactionScreen";
 
 // Adjust the component and file names to match
 const BottomTabNavigator = () => {
@@ -18,14 +21,14 @@ const BottomTabNavigator = () => {
       screenOptions={{
         tabBarActiveTintColor: "#fff",
         tabBarHideOnKeyboard: true,
-        tabBarInactiveTintColor: "gray",
+        // tabBarInactiveTintColor: "gray",
         tabBarStyle: {
           position: "absolute",
           height: 96,
           paddingBottom: 45,
           paddingTop: 8,
           backgroundColor: "#fff",
-          elevation: 1,
+          elevation: 5,
           borderTopWidth: 1,
           borderTopColor: "rgba(255, 255, 255, 1)",
         },
@@ -38,7 +41,7 @@ const BottomTabNavigator = () => {
     >
       <Tab.Screen
         name="Home"
-        component={SettingsScreen} // Ensure this matches the screen component name
+        component={HomeScreen} // Ensure this matches the screen component name
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>
@@ -65,20 +68,16 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Wallet"
-        component={SettingsScreen} // Ensure this matches the screen component name
+        component={WalletScreen} // Ensure this matches the screen component name
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>
-            focused ? (
-              <SvgXml xml={svg.settingsActive} />
-            ) : (
-              <SvgXml xml={svg.wallet} />
-            ),
+            focused ? <SvgXml xml={svg.wallet} /> : <SvgXml xml={svg.wallet} />,
           tabBarLabel: ({ focused }) => (
             <P
               style={{
                 color: focused
-                  ? "rgba(139, 82, 255, 1)"
+                  ? "rgba(165, 161, 161, 1)"
                   : "rgba(165, 161, 161, 1)",
                 fontFamily: fonts.poppinsMedium,
                 fontSize: 12,
@@ -92,12 +91,12 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Transaction"
-        component={ReferralScreen} // Ensure this matches the screen component name
+        component={TransactionScreen} // Ensure this matches the screen component name
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <SvgXml xml={svg.settingsActive} />
+              <SvgXml xml={svg.transaction} />
             ) : (
               <SvgXml xml={svg.transaction} />
             ),
@@ -105,7 +104,7 @@ const BottomTabNavigator = () => {
             <P
               style={{
                 color: focused
-                  ? "rgba(139, 82, 255, 1)"
+                  ? "rgba(165, 161, 161, 1)"
                   : "rgba(165, 161, 161, 1)",
                 fontFamily: fonts.poppinsMedium,
                 fontSize: 12,

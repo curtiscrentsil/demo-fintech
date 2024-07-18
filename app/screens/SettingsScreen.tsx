@@ -18,7 +18,7 @@ import ListItemBtn from "../components/ListItemBtn";
 import Btn from "../components/Btn";
 const { width, height } = Dimensions.get("window");
 
-export default function SettingScreen() {
+export default function SettingScreen({ navigation, route }) {
   return (
     <LinearGradient
       colors={[
@@ -70,7 +70,13 @@ export default function SettingScreen() {
               <ListItemBtn text="Security" icon={svg.security} />
               <ListItemBtn text="Notification" icon={svg.notification2} />
               <ListItemBtn text="Report scam" icon={svg.alert} />
-              <ListItemBtn text="Referral" icon={svg.share} />
+              <ListItemBtn
+                text="Referral"
+                icon={svg.share}
+                onPress={() => {
+                  navigation.navigate("ReferralScreen");
+                }}
+              />
               <ListItemBtn text="Rate SFx " icon={svg.star} />
               <ListItemBtn text="Help & support" icon={svg.help_square} />
               <ListItemBtn

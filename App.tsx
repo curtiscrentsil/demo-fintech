@@ -8,6 +8,7 @@ import SettingScreen from "./app/screens/SettingsScreen";
 import BottomTabNavigator from "./app/navigation/BottomTabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
 import ReferralScreen from "./app/screens/ReferralScreen";
+import MainStack from "./app/navigation/MainStack";
 
 export default function App() {
   const [appReady, setAppReady] = useState(false);
@@ -37,12 +38,7 @@ export default function App() {
     console.log("not done");
     return null;
   }
-  return (
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
-    // <ReferralScreen/>
-  );
+  return <MainStack />;
 }
 
 const styles = StyleSheet.create({
