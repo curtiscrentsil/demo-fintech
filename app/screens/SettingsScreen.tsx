@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   View,
   Text,
+  ScrollView,
 } from "react-native";
 import { fonts } from "../config/Fonts";
 import { svg } from "../config/Svg";
@@ -30,66 +31,68 @@ export default function SettingScreen() {
     >
       <Div>
         <UserHeader />
-        <View style={styles.bodySection}>
-          <View style={styles.balcard}>
-            <View style={styles.content1}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <P style={{ fontSize: 12 }}>Available asset balance</P>
-                <TouchableOpacity style={{ marginLeft: 8 }}>
-                  <SvgXml xml={svg.eye} />
-                </TouchableOpacity>
+        <ScrollView>
+          <View style={styles.bodySection}>
+            <View style={styles.balcard}>
+              <View style={styles.content1}>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <P style={{ fontSize: 12 }}>Available asset balance</P>
+                  <TouchableOpacity style={{ marginLeft: 8 }}>
+                    <SvgXml xml={svg.eye} />
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <P style={{ fontSize: 24, lineHeight: 36 }}>
+                    900,000{" "}
+                    <Text
+                      style={{ fontSize: 16, fontFamily: fonts.poppinsMedium }}
+                    >
+                      USD
+                    </Text>
+                  </P>
+                </View>
               </View>
-              <View>
-                <P style={{ fontSize: 24, lineHeight: 36 }}>
-                  900,000{" "}
-                  <Text
-                    style={{ fontSize: 16, fontFamily: fonts.poppinsMedium }}
-                  >
-                    USD
-                  </Text>
-                </P>
+              <View style={styles.content2}>
+                <P style={{ fontSize: 12 }}>Referral earnings</P>
+                <View>
+                  <P style={{ fontSize: 16, lineHeight: 24 }}>
+                    50,000{" "}
+                    <Text
+                      style={{ fontSize: 12, fontFamily: fonts.poppinsMedium }}
+                    >
+                      USD
+                    </Text>
+                  </P>
+                </View>
               </View>
             </View>
-            <View style={styles.content2}>
-              <P style={{ fontSize: 12 }}>Referral earnings</P>
-              <View>
-                <P style={{ fontSize: 16, lineHeight: 24 }}>
-                  50,000{" "}
-                  <Text
-                    style={{ fontSize: 12, fontFamily: fonts.poppinsMedium }}
-                  >
-                    USD
-                  </Text>
-                </P>
-              </View>
+            <View style={styles.actionCard}>
+              <ListItemBtn text="Security" icon={svg.security} />
+              <ListItemBtn text="Notification" icon={svg.notification2} />
+              <ListItemBtn text="Report scam" icon={svg.alert} />
+              <ListItemBtn text="Referral" icon={svg.share} />
+              <ListItemBtn text="Rate SFx " icon={svg.star} />
+              <ListItemBtn text="Help & support" icon={svg.help_square} />
+              <ListItemBtn
+                text="About us"
+                icon={svg.building}
+                showBorder={false}
+              />
             </View>
+            <Btn text="Logout" icon={svg.logout} />
+            <P
+              style={{
+                textAlign: "center",
+                marginTop: 24,
+                fontSize: 12,
+                fontFamily: fonts.poppinsRegular,
+                color: "rgba(165, 161, 161, 1)",
+              }}
+            >
+              Version:2.0
+            </P>
           </View>
-          <View style={styles.actionCard}>
-            <ListItemBtn text="Security" icon={svg.security} />
-            <ListItemBtn text="Notification" icon={svg.notification2} />
-            <ListItemBtn text="Report scam" icon={svg.alert} />
-            <ListItemBtn text="Referral" icon={svg.share} />
-            <ListItemBtn text="Rate SFx " icon={svg.star} />
-            <ListItemBtn text="Help & support" icon={svg.help_square} />
-            <ListItemBtn
-              text="About us"
-              icon={svg.building}
-              showBorder={false}
-            />
-          </View>
-          <Btn text="Logout" icon={svg.logout}/>
-          <P
-            style={{
-              textAlign: "center",
-              marginTop: 24,
-              fontSize: 12,
-              fontFamily: fonts.poppinsRegular,
-              color: "rgba(165, 161, 161, 1)",
-            }}
-          >
-            Version:2.0
-          </P>
-        </View>
+        </ScrollView>
       </Div>
     </LinearGradient>
   );
@@ -122,7 +125,7 @@ const styles = StyleSheet.create({
   },
   actionCard: {
     width: "100%",
-    minHeight: 364,
+    minHeight: 100,
     backgroundColor: "#fff",
     borderRadius: 12,
     alignItems: "center",

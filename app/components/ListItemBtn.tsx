@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
   btnCont: {
     width: "90%",
     // height: 52,
-    height: 52,
+    // height: 52,
+    height: (6.5 * height) / 100,
     // backgroundColor: "red",
     flexDirection: "row",
     alignItems: "center",

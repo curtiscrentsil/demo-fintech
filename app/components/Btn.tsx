@@ -23,7 +23,7 @@ export default function ({ text, icon }: PProps) {
 const styles = StyleSheet.create({
   btn: {
     width: "100%",
-    height: 52,
+    height: (6.5 * height) / 100,
     backgroundColor: "#fff",
     borderRadius: 12,
     flexDirection: "row",
