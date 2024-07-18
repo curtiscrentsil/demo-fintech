@@ -6,6 +6,7 @@ import { SvgXml } from "react-native-svg";
 import { svg } from "../config/Svg";
 import SettingsScreen from "../screens/SettingsScreen";
 import P from "../components/P";
+import ReferralScreen from "../screens/ReferralScreen";
 
 // Adjust the component and file names to match
 const BottomTabNavigator = () => {
@@ -91,7 +92,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Transaction"
-        component={SettingsScreen} // Ensure this matches the screen component name
+        component={ReferralScreen} // Ensure this matches the screen component name
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) =>

@@ -7,6 +7,7 @@ import BillPaymentScreen from "./app/screens/BillPaymentScreen";
 import SettingScreen from "./app/screens/SettingsScreen";
 import BottomTabNavigator from "./app/navigation/BottomTabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
+import ReferralScreen from "./app/screens/ReferralScreen";
 
 export default function App() {
   const [appReady, setAppReady] = useState(false);
@@ -40,6 +41,7 @@ export default function App() {
     <NavigationContainer>
       <BottomTabNavigator />
     </NavigationContainer>
+    // <ReferralScreen/>
   );
 }
 
