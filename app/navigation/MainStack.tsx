@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import BottomTabNavigator from "./BottomTabNavigator";
 import ReferralScreen from "../screens/ReferralScreen";
+import BillPaymentScreen from "../screens/BillPaymentScreen";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,15 @@ export default function MainStack() {
         <Stack.Screen
           name="ReferralScreen"
           component={ReferralScreen}
+          options={{
+            headerTransparent: true,
+            headerShadowVisible: false,
+            headerShown: false,
+          }}
+        />
+         <Stack.Screen
+          name="BillPaymentScreen"
+          component={BillPaymentScreen}
           options={{
             headerTransparent: true,
             headerShadowVisible: false,

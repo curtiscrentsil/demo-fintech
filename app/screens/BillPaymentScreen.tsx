@@ -10,11 +10,11 @@ import MicroBtn from "../components/MicroBtn";
 
 const { width, height } = Dimensions.get("window");
 
-export default function BillPaymentScreen() {
+export default function BillPaymentScreen({navigation}) {
   return (
     <View style={styles.body}>
       <Div>
-        <AuthenticationHedear text="Bill payment" />
+        <AuthenticationHedear text="Bill payment" navigation={navigation}/>
         <View style={styles.contentBody}>
           <View style={styles.btnCard}>
             <View style={styles.btnSec1}>
