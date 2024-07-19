@@ -1,0 +1,42 @@
+{
+    "cli": {
+      "version": ">= 3.14.0"
+    },
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal",
+        "ios": {
+          "buildConfiguration": "Release",
+          "image": "latest"
+        }
+      },
+      "androidapk": {
+        "android": {
+          "buildType": "apk"
+        }
+      },
+      "preview": {
+        "distribution": "internal"
+      },
+      "production": {
+        "ios": {
+          "buildConfiguration": "Release",
+          "image": "latest",
+          "releaseChannel": "production"
+        },
+        "android": {
+          "buildType": "app-bundle",
+          "image": "latest"
+        }
+      }
+    },
+    "submit": {
+      "production": {
+        "ios": {
+         
+        }
+      }
+    }
+  }
+  
