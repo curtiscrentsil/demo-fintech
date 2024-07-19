@@ -1,10 +1,26 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { View, StyleSheet, Image } from "react-native";
 import P from "./P";
 import MicroBtn from "./MicroBtn";
 import { svg } from "../config/Svg";
+import { fonts } from "../config/Fonts";
 
-export default function UserHeader() {
+interface PProps {
+  showStatus?: Boolean;
+  text1?: string;
+  showName?: string;
+  text1Style?: CSSProperties;
+  icon1?: any;
+  icon2?: any;
+}
+export default function UserHeader({
+  showStatus = true,
+  text1 = "Martins Chidume",
+  showName,
+  text1Style,
+  icon1 = svg.barCode,
+  icon2 = svg.notification,
+}: PProps) {
   return (
     <View style={styles.cont}>
       <View style={styles.mainCont}>
@@ -15,25 +31,42 @@ export default function UserHeader() {
           />
           <View style={styles.info}>
             <P
-              style={{
-                fontSize: 14,
-                color: "rgba(22, 24, 23, 1)",
-                lineHeight: 21,
-                marginBottom: 4,
-              }}
+              // @ts-ignore
+              style={[
+                {
+                  fontSize: 14,
+                  color: "rgba(22, 24, 23, 1)",
+                  lineHeight: 21,
+                  marginBottom: 4,
+                },
+                text1Style,
+              ]}
             >
-              Martins Chidume
+              {text1}
             </P>
-            <View style={styles.statusCont}>
-              <P style={{ fontSize: 12, color: "rgba(201, 4, 4, 1)" }}>
-                Not verified
+            {showStatus && (
+              <View style={styles.statusCont}>
+                <P style={{ fontSize: 12, color: "rgba(201, 4, 4, 1)" }}>
+                  Not verified
+                </P>
+              </View>
+            )}
+            {showName && (
+              <P
+                style={{
+                  fontSize: 14,
+                  color: "#fff",
+                  fontFamily: fonts.poppinsRegular,
+                }}
+              >
+                {showName}
               </P>
-            </View>
+            )}
           </View>
         </View>
         <View style={styles.content2}>
-          <MicroBtn icon={svg.barCode} style={{ marginRight: 8 }} />
-          <MicroBtn icon={svg.notification} />
+          <MicroBtn icon={icon1} style={{ marginRight: 8 }} />
+          <MicroBtn icon={icon2} />
         </View>
       </View>
     </View>
